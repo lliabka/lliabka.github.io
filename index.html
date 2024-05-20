@@ -90,22 +90,58 @@
         </section>
         <section id="projects">
             <h2>Мои проекты</h2>
-            <div class="project-grid">
-                <div class="project">
-                    <img src="endura.png" alt="Проект 1">
-                    <h3>Проект 1</h3>
-                    <p>Описание проекта 1.</p>
-                </div>
-                <div class="project">
-                    <img src="ch0knyt banner vers 3.png" alt="Проект 2">
-                    <h3>Проект 2</h3>
-                    <p>Описание проекта 2.</p>
-                </div>
-                <div class="project">
-                    <img src="steisha banner v2.png" alt="Проект 3">
-                    <h3>Проект 3</h3>
-                    <p>Описание проекта 3.</p>
-                </div>
+            <div class="slider">
+        <div class="slides">
+            <img src="image1.jpg" alt="Изображение 1" onclick="openFullscreen(this)">
+            <img src="image2.jpg" alt="Изображение 2" onclick="openFullscreen(this)">
+            <img src="image3.jpg" alt="Изображение 3" onclick="openFullscreen(this)">
+        </div>
+        <div class="nav">
+            <button onclick="prevSlide()">&#10094;</button>
+            <button onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+
+    <div id="fullscreen-overlay" class="fullscreen-overlay" onclick="closeFullscreen()">
+        <img id="fullscreen-img" src="" alt="Полноэкранное изображение">
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slides img');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function openFullscreen(img) {
+            const fullscreenOverlay = document.getElementById('fullscreen-overlay');
+            const fullscreenImg = document.getElementById('fullscreen-img');
+            fullscreenImg.src = img.src;
+            fullscreenOverlay.style.display = 'flex';
+        }
+
+        function closeFullscreen() {
+            const fullscreenOverlay = document.getElementById('fullscreen-overlay');
+            fullscreenOverlay.style.display = 'none';
+        }
+
+        // Инициализация первого слайда
+        showSlide(currentSlide);
+    </script>
+
                 <!-- Добавьте больше проектов по мере необходимости -->
             </div>
         </section>
