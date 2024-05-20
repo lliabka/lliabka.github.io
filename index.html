@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение внешнего CSS-файла -->
+    <style>
+        /* Встроенные стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            margin: 0;
+            padding: 0;
+            background: #555;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background: #444;
+        }
+        main {
+            padding: 1em;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать на мою страницу</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Главная</h2>
+            <p>Здесь находится основная информация.</p>
+        </section>
+        <section id="about">
+            <h2>О нас</h2>
+            <p>Раздел о нас.</p>
+        </section>
+        <section id="services">
+            <h2>Услуги</h2>
+            <p>Информация об услугах.</p>
+        </section>
+        <section id="contact">
+            <h2>Контакты</h2>
+            <p>Наши контактные данные.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Моя компания</p>
+    </footer>
+</body>
+</html>
