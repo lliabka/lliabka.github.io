@@ -4,160 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио графического дизайнера</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключение внешнего CSS-файла -->
-    <style>
-        /* Встроенные стили */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em 0;
-            text-align: center;
-        }
-        nav {
-            margin: 0;
-            padding: 0;
-            background: #555;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0;
-        }
-        nav ul li a {
-            color: white;
-            padding: 15px 20px;
-            display: block;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            background: #444;
-        }
-        main {
-            padding: 2em;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1em;
-        }
-        .project {
-            background: white;
-            padding: 1em;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .project img {
-            width: 100%;
-            height: auto;
-        }
-        .project h3 {
-            margin: 0.5em 0;
-        }
-        footer {
-            text-align: center;
-            padding: 1em 0;
-            background: #333;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Портфолио графического дизайнера</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Главная</a></li>
-            <li><a href="#projects">Проекты</a></li>
-            <li><a href="#about">Обо мне</a></li>
-            <li><a href="#contact">Контакты</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="home">
-            <h2>Добро пожаловать</h2>
-            <p>Привет! Я графический дизайнер, и это мое портфолио.</p>
-        </section>
-        <section id="projects">
-            <h2>Мои проекты</h2>
-            <div class="slider">
-        <div class="slides">
-            <img src="banner mosey.png" alt="Изображение 1" onclick="openFullscreen(this)">
-            <img src="ch0knyt banner vers 3.png" alt="Изображение 2" onclick="openFullscreen(this)">
-            <img src="endura.png" alt="Изображение 3" onclick="openFullscreen(this)">
-            <img src="баннер.png" alt="Изображение 3" onclick="openFullscreen(this)">
-            <img src="steisha banner v2.png" alt="Изображение 3" onclick="openFullscreen(this)">
-        </div>
-        <div class="nav">
-            <button onclick="prevSlide()">&#10094;</button>
-            <button onclick="nextSlide()">&#10095;</button>
-        </div>
-    </div>
-
-    <div id="fullscreen-overlay" class="fullscreen-overlay" onclick="closeFullscreen()">
-        <img id="fullscreen-img" src="" alt="Полноэкранное изображение">
-    </div>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slides img');
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.display = i === index ? 'block' : 'none';
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function openFullscreen(img) {
-            const fullscreenOverlay = document.getElementById('fullscreen-overlay');
-            const fullscreenImg = document.getElementById('fullscreen-img');
-            fullscreenImg.src = img.src;
-            fullscreenOverlay.style.display = 'flex';
-        }
-
-        function closeFullscreen() {
-            const fullscreenOverlay = document.getElementById('fullscreen-overlay');
-            fullscreenOverlay.style.display = 'none';
-        }
-
-        // Инициализация первого слайда
-        showSlide(currentSlide);
-    </script>
-
-                <!-- Добавьте больше проектов по мере необходимости -->
+    
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+      <header>
+          <h1>Портфолио графического дизайнера</h1>
+      </header>
+      <nav>
+          <ul>
+              <li><a href="#home">Главная</a></li>
+              <li><a href="#projects">Проекты</a></li>
+              <li><a href="#about">Обо мне</a></li>
+              <li><a href="#contact">Контакты</a></li>
+          </ul>
+      </nav>
+      <main>
+          <section id="home">
+              <h2>Добро пожаловать</h2>
+              <p>Привет! Я графический дизайнер, и это мое портфолио.</p>
+          </section>
+          <section id="projects">
+              <h2>Мои проекты</h2>
+              <div class="slideshow">
+                <div class="slideshow-item">
+                    <img src="img/banner mosey.png" alt="">
+                </div>
+                <div class="slideshow-item">
+                    <img src="img/ch0knyt banner vers 3.png" alt="">
+                </div>
+                <div class="slideshow-item">
+                    <img src="img/endura.png" alt="">
+                </div>
+                <div class="slideshow-item">
+                    <img src="img/steisha banner v2.png" alt="">
+                </div>
+                <div class="slideshow-item">
+                  <img src="img/баннер.png" alt="">
+              </div>
             </div>
-        </section>
-        <section id="about">
-            <h2>Обо мне</h2>
-            <p>Меня зовут [Ваше имя], и я занимаюсь графическим дизайном уже [X] лет. Моя цель - создавать уникальные и запоминающиеся визуальные решения для моих клиентов.</p>
-        </section>
-        <section id="contact">
-            <h2>Контакты</h2>
-            <p>Свяжитесь со мной по электронной почте: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 [Ваше имя]. Все права защищены.</p>
-    </footer>
+            </div>
+<section id="about">
+    <h2>Обо мне</h2>
+    <p>Меня зовут Дмитрий, и я занимаюсь графическим дизайном уже 6 лет. Моя цель - создавать уникальные и запоминающиеся визуальные решения для моих клиентов.</p>
+</section>
+<section id="contact">
+    <h2>Контакты</h2>
+    <p>Свяжитесь со мной по электронной почте: <a href="mailto:miheev204322@yandex.ru">miheev204322@yandex.ru</a></p>
+</section>
+</main>
+<footer>
+<p>&copy; 2024 Михеев Дмитрий. Все права защищены.</p>
+</footer>
 </body>
 </html>
